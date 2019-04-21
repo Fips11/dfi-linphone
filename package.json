@@ -1,24 +1,39 @@
 {
-  "name": "dfi-linphone",
-  "version": "1.3.2",
-  "description": "linphonec wrapper",
-  "main": "src/linphone.js",
-  "scripts": {
-    "test": "./node_modules/mocha/bin/_mocha --require ts-node/register  ./tests"
-  },
-  "repository": {
+  "_from": "github:Fips11/dfi-linphone#master",
+  "_id": "dfi-linphone@1.3.2",
+  "_inBundle": false,
+  "_integrity": "",
+  "_location": "/dfi-linphone",
+  "_phantomChildren": {},
+  "_requested": {
     "type": "git",
-    "url": "https://github.com/dafik/dfi-linphone.git"
+    "raw": "Fips11/dfi-linphone#master",
+    "rawSpec": "Fips11/dfi-linphone#master",
+    "saveSpec": "github:Fips11/dfi-linphone#master",
+    "fetchSpec": null,
+    "gitCommittish": "master"
   },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "github:Fips11/dfi-linphone#7a4744e3ea5aab3824a2c3a1032d9b098550b601",
+  "_spec": "Fips11/dfi-linphone#master",
+  "_where": "/home/pi/phonecontrol",
   "author": {
     "name": "Zbyszek Wieczorek",
     "email": "zbyszek.wieczorek at gmail.com"
   },
-  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dafik/dfi-linphone/issues"
+  },
+  "bundleDependencies": false,
   "dependencies": {
     "dfi-debug-logger": "^0.1.5",
     "ini": "^1.3.5"
   },
+  "deprecated": false,
+  "description": "linphonec wrapper",
   "devDependencies": {
     "@types/ini": "^1.3.29",
     "@types/mocha": "^2.2.46",
@@ -27,5 +42,17 @@
     "nyc": "^11.4.1",
     "ts-node": "^3.3.0",
     "typescript": "^2.6.2"
-  }
+  },
+  "homepage": "https://github.com/dafik/dfi-linphone#readme",
+  "license": "MIT",
+  "main": "src/linphone.js",
+  "name": "dfi-linphone",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dafik/dfi-linphone.git"
+  },
+  "scripts": {
+    "test": "./node_modules/mocha/bin/_mocha --require ts-node/register  ./tests"
+  },
+  "version": "1.3.2"
 }

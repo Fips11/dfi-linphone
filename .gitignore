@@ -1,8 +1,8 @@
 node_modules
 /*.iml
 /.idea/
-*.js
-**/*.js
+
+
 *.map
 **/*.map
 /tests/config.json
