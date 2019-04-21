@@ -93,7 +93,7 @@ class Linphone extends EventEmitter {
             .digest("hex");
 
         const filePath = "/tmp/" + fileName + ".linphone.conf";
-        this._onConfigName(filePath);
+        this._onConfigName(filePath,this._configuration.configDir );
     }
 
     public makeCall(target: string): void {
@@ -297,12 +297,12 @@ class Linphone extends EventEmitter {
         this._bindLinphoneStdio();
     }
 
-    private _onConfigName(filePath: string) {
+    private _onConfigName(filePath: string,configFile: string) {
         this._configuration.file = filePath;
 
         let configPath = __dirname + "/linphone.conf";
 
-        if(this._configuration.configDir) configPath = this._configuration.configDir;
+        if(configFile) configPath = configFile;
 
         readFile(configPath, {encoding: "utf8"}, (err, data) => {
             if (err) {

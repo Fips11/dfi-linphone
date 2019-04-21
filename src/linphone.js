@@ -10,7 +10,7 @@ const ini = require("ini");
 class Linphone extends events_1.EventEmitter {
     static get events() {
         return EVENTS;
-    } 
+    }
     static newLineStream(callback, context) {
         let buffer = "";
         return ((chunk) => {
@@ -72,7 +72,7 @@ class Linphone extends events_1.EventEmitter {
             .update(date.toUTCString() + date.getMilliseconds() + randomInt)
             .digest("hex");
         const filePath = "/tmp/" + fileName + ".linphone.conf";
-        this._onConfigName(filePath);
+        this._onConfigName(filePath, this._configuration.configDir);
     }
     makeCall(target) {
         this._logger.info(this._configuration.sip + ": making call to : " + target);
@@ -248,11 +248,11 @@ class Linphone extends events_1.EventEmitter {
         });
         this._bindLinphoneStdio();
     }
-    _onConfigName(filePath) {
+    _onConfigName(filePath, configFile) {
         this._configuration.file = filePath;
         let configPath = __dirname + "/linphone.conf";
-        if (this._configuration.configDir)
-            configPath = this._configuration.configDir;
+        if (configFile)
+            configPath = configFile;
         fs_1.readFile(configPath, { encoding: "utf8" }, (err, data) => {
             if (err) {
                 this.emit(Linphone.events.ERROR, err);
