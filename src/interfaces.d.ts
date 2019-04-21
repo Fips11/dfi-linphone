@@ -5,6 +5,6 @@ export interface ILinphoneConfig {
     rtpPort: number;
     sip: number;
     technology: string;
-
+    configDir?: string;
     file?: string;
 }

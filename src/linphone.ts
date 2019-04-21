@@ -77,7 +77,7 @@ class Linphone extends EventEmitter {
         /*        if (false) {
          this._bindProcessSignals();
          }*/
-
+         /*
         this.on(Linphone.events.READY, () => {
             const target = this._configuration.file.replace("conf", "wav");
             this._write("soundcard use files");
@@ -85,7 +85,7 @@ class Linphone extends EventEmitter {
                 this._write("record " + target);
             });
         });
-
+        */
         const date = new Date();
         const randomInt = Math.floor(Math.random() * (100000 - 10000 + 1) + 1000);
         const fileName = createHash("sha1")
@@ -299,7 +299,12 @@ class Linphone extends EventEmitter {
 
     private _onConfigName(filePath: string) {
         this._configuration.file = filePath;
-        readFile(__dirname + "/linphone.conf", {encoding: "utf8"}, (err, data) => {
+
+        let configPath = __dirname + "/linphone.conf";
+
+        if(this._configuration.configDir) configPath = this._configuration.configDir;
+
+        readFile(configPath, {encoding: "utf8"}, (err, data) => {
             if (err) {
                 this.emit(Linphone.events.ERROR, err);
                 return;
